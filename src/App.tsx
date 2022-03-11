@@ -7,7 +7,7 @@ import {GlobalRouters} from 'src/routers/GlobalRouters';
 import './styles/theme/reset.css';
 import './styles/theme/modal.css';
 
-function App() {
+const App = () => {
 	return (
 		<StoreProvider>
 			<ThemeProvider theme={{mode: 'light'}}>
@@ -15,6 +15,6 @@ function App() {
 			</ThemeProvider>
 		</StoreProvider>
 	);
-}
+};
 
 export default App;
