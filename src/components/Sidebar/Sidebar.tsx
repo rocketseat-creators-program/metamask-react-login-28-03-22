@@ -1,18 +1,17 @@
 import {faChevronCircleLeft} from '@fortawesome/free-solid-svg-icons';
-import React, {MouseEvent} from 'react';
+import React from 'react';
 
 import {UserSnippet} from 'src/components/Profile/UserSnippet';
 import {MainNavigation} from 'src/components/Sidebar/Navigation/MainNavigation';
 import {SecondaryNavigation} from 'src/components/Sidebar/Navigation/SecondaryNavigation';
 import {Aside, BrandLink, BrandName, ToggleMenu} from 'src/components/Sidebar/styles/sidebar.style';
+import {useMetamask} from 'src/hooks/metamask.hook';
 import {ConnectButton} from 'src/styles/theme/buttons';
 
 import metamask_icon from './../../assets/images/metamask.png';
 
 export const Sidebar = () => {
-	const connectMetamask = (event: MouseEvent<HTMLButtonElement>): void => {
-		event.preventDefault();
-	};
+	const {connectMetamask} = useMetamask();
 
 	return (
 		<Aside>
@@ -22,7 +21,7 @@ export const Sidebar = () => {
 					<BrandName>FABDASH</BrandName>
 				</BrandLink>
 				<UserSnippet />
-				<ConnectButton onClick={(e) => connectMetamask(e)} className="metamask-button">
+				<ConnectButton onClick={() => connectMetamask()} className="metamask-button">
 					<img
 						src={metamask_icon}
 						alt="Metamask wallet id"
