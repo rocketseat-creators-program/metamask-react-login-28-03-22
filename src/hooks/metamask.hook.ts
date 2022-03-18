@@ -39,10 +39,8 @@ export const useMetamask = (): UseMetamask => {
 
   const connectMetamask = async (): Promise<StatusReturns> => {
     const provider = await detectEthereumProvider();
-    console.log("#1 detectMetamask", detectMetamask);
 
     if (provider) {
-      console.log("#2 detectMetamask", detectMetamask);
       setDetectMetamask(true);
 
       // TODO: Verificar Network
@@ -51,7 +49,6 @@ export const useMetamask = (): UseMetamask => {
           status: StatusDefault.ERROR,
           message,
         }))) === null;
-      console.log("validNetwork", validNetwork);
       /**
        * -32603: Unrecognized chain ID
        * 4001: User rejected the request
@@ -60,16 +57,23 @@ export const useMetamask = (): UseMetamask => {
 
       // TODO: Network errada: solicita a troca (switchEthereumChain)
       // Network certa: conectar (eth_requestAccounts)
-      const connectResponse = await ethereum.current
-        ?.request<string[]>({ method: "eth_requestAccounts" })
-        .catch(({ message }) => ({
-          status: StatusDefault.ERROR,
-          message: message,
-          solution: "Please, contact our support.",
-        }));
-      console.log("connectResponse", connectResponse);
-      // TODO: Get wallet ID
-      // TODO: Set connected
+      if (validNetwork) {
+        const connectResponse = await ethereum.current
+          ?.request<string[]>({ method: "eth_requestAccounts" })
+          .catch(({ message }) => ({
+            status: StatusDefault.ERROR,
+            message: message,
+            solution: "Please, contact our support.",
+          }));
+        // Get wallet ID
+        const currentWallet =
+          typeof connectResponse === "string"
+            ? connectResponse
+            : (connectResponse as string[]).shift();
+        setWalletId(currentWallet);
+        console.log("walletId", currentWallet);
+        // TODO: Set connected
+      }
 
       return {
         status: StatusDefault.SUCCESS,
