@@ -59,7 +59,15 @@ export const useMetamask = (): UseMetamask => {
        */
 
       // TODO: Network errada: solicita a troca (switchEthereumChain)
-      // TODO: Network certa: conectar (eth_requestAccounts)
+      // Network certa: conectar (eth_requestAccounts)
+      const connectResponse = await ethereum.current
+        ?.request<string[]>({ method: "eth_requestAccounts" })
+        .catch(({ message }) => ({
+          status: StatusDefault.ERROR,
+          message: message,
+          solution: "Please, contact our support.",
+        }));
+      console.log("connectResponse", connectResponse);
       // TODO: Get wallet ID
       // TODO: Set connected
 
