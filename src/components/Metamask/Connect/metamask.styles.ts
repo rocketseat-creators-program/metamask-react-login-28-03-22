@@ -1,6 +1,19 @@
 import styled from "styled-components";
 
-export const ConnectButton = styled.button`
+import { rem } from "src/utils/px-to-rem";
+
+export const MetamaskWrap = styled.div`
+  display: flex;
+  margin-bottom: ${rem(30)};
+`;
+
+export const MetamaskText = styled.span`
+  color: inherit;
+  fontsize: ${rem(18)};
+  margin-left: ${rem(5)};
+`;
+
+export const MetamaskButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;

@@ -20,11 +20,13 @@ interface UseMetamask {
   detectMetamask: boolean;
   connectMetamask: () => Promise<StatusReturns>;
   walletId?: string;
+  metamaskIsConnected: () => boolean;
+  walletIdShrunk?: string;
 }
 
 export const useMetamask = (): UseMetamask => {
   const [detectMetamask, setDetectMetamask] = useState<boolean>(false);
-  const [walletId, setWalletId] = useState<string>();
+  const [walletId, setWalletId] = useState<string | undefined>();
   const ethereum = useRef<MetaMaskInpageProvider | null>(
     (window.ethereum as MetaMaskInpageProvider) || null
   );
@@ -89,5 +91,19 @@ export const useMetamask = (): UseMetamask => {
     }
   };
 
-  return { detectMetamask, connectMetamask, walletId };
+  const metamaskIsConnected = (): boolean =>
+    detectMetamask && walletId ? true : false;
+
+  const walletIdShrunk: string =
+    walletId?.substring(0, 6) +
+    "..." +
+    walletId?.substring(walletId.length - 6);
+
+  return {
+    detectMetamask,
+    connectMetamask,
+    walletId,
+    walletIdShrunk,
+    metamaskIsConnected,
+  };
 };
