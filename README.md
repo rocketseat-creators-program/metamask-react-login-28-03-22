@@ -43,7 +43,7 @@ Repositório para clone/fork: [metamask-app](https://github.com/rafaelperozin/me
 | :--------------------------------------------------------------------------------------------------------: |
 |                             [Rafael Perozin](https://github.com/rafaelperozin)                             |
 
-*“Sou senior frontend developer na [BrandAlley](www.brandalley.co.uk), uma loja virtual com super descontos em marcas de roupas famosas que tem mais de 30 milhões de acesso diários. Sou um dos responsáveis por reconstruindo todo o front da loja com React, React Native e Typescript. Para quem quiser me conhecer melhor pode me adicionar no [LinkedIn](https://linkedin.com/in/rafaelperozin), seguir meu canal no [Instagram](https://www.instagram.com/rafaelperozin) onde eu mostro um pouco do meu dia a dia aqui na Inglaterra e seguir o meu canal no [Youtube](https://www.youtube.com/c/rafaelperozin) onde eu falo sobre softskills e como é trabalhar fora.”*
+*“Sou senior frontend developer na [BrandAlley](www.brandalley.co.uk), uma loja virtual com super descontos em marcas de roupas famosas que tem mais de 30 milhões de acesso diários. Sou um dos responsáveis por reconstruir todo o front da loja com React, React Native e Typescript. Para quem quiser me conhecer melhor pode me adicionar no [LinkedIn](https://linkedin.com/in/rafaelperozin), seguir meu canal no [Instagram](https://www.instagram.com/rafaelperozin) onde eu mostro um pouco do meu dia a dia aqui na Inglaterra e seguir o meu canal no [Youtube](https://www.youtube.com/c/rafaelperozin) onde eu falo sobre softskills e como é trabalhar fora.”*
 
 ## Conecte-se com o Rafael:
 - Youtube: [Rafael Perozin](https://www.youtube.com/c/rafaelperozin)
