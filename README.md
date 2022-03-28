@@ -25,7 +25,7 @@ Stack: [React](https://reactjs.org/docs/getting-started.html) | [Typescript](htt
 
 Libraries: [FontAwesome](https://fontawesome.com/v5.15/how-to-use/on-the-web/using-with/react) | [ESLint](https://eslint.org/docs/user-guide/command-line-interface) | [Axios](https://github.com/axios/axios)
 
-Repositório para clone/fork: [metamask-app](https://github.com/rafaelperozin/metamask-app)
+Repositório para clone/fork: [fabdash](https://github.com/rafaelperozin/fabdash)
 
 ---
 ## **Roteiro da Aula**
